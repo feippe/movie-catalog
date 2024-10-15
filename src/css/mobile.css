@@ -1,0 +1,8 @@
+@media only screen and (max-width: 700px) {
+  #header-bar-logo span {
+    display: none;
+  }
+  #header-bar-logo {
+    width: 30px;
+  }
+}

@@ -49,7 +49,7 @@ export async function loadHeaderAndFooter(headerId = "header", headerFileName = 
     
 }
 export function renderListWithTemplate(list, templateFn, parentElement){
-    let htmlFinal = list.map(templateFn);
+    let htmlFinal = list.map(templateFn).join('');
     if(htmlFinal !== null){
         parentElement.innerHTML = htmlFinal;
     }
