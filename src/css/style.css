@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Quicksand:wght@300..700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", verdana, serif, arial;
+  background-color: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Cinzel", verdana, serif, arial;
+}
+main {
+  background-color: #1d2659;
+}
+main > .content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/*HEADER*/
+header {
+  display: inline-block;
+  width: 100%;
+  height: 62px;
+  margin: 0;
+  background-color: #730a26;
+  -webkit-box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
+}
+#header-bar {
+  width: 100%;
+  max-width: 1000px;
+  height: 62px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#header-bar-logo {
+  width: 174px;
+  margin: 16px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-family: "Cinzel", verdana, serif, arial;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+#header nav {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 14px;
+  height: 30px;
+  margin: 16px 16px 0 0;
+}
+#header nav a {
+  text-decoration: none;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 16px;
+  color: #fff;
+  border-bottom: solid 2px #730a26;
+}
+#header nav a:hover {
+  border-bottom: solid 2px #7193d9;
+}
+#header nav a.selected {
+  border-bottom: solid 2px #ffffff;
+}
+
+/*FOOTER*/
+#footer-information {
+  text-align: center;
+  color: #fff;
+  padding: 32px 0;
+}
+#footer-information p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+/*CONFIGS PAGE*/
+.form-confi {
+  padding: 16px;
+  color: #fff;
+}
+.form-confi fieldset {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: solid 1px #777;
+  display: inline-block;
+  padding: 8px 16px;
+}
+.form-confi fieldset label {
+  font-size: 14px;
+}
+.form-confi fieldset label select {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+.form-confi fieldset label select option {
+  background: #1d2659;
+}
