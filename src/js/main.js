@@ -10,4 +10,4 @@ let configs = new Configs();
 let tmdb = new Tmdb(`${configs.language}-${configs.country}`);
 const popular = await tmdb.getPopular();
 
-renderListWithTemplate(popular, cardTemplate, qs("#main"));
+renderListWithTemplate(popular, cardTemplate, qs("#cardsMovies"));
