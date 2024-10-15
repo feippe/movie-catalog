@@ -5,4 +5,88 @@
   #header-bar-logo {
     width: 30px;
   }
+
+  #hamburguer-menu {
+    display: inline-block;
+    color: #fff;
+    padding: 16px;
+    font-size: 26px;
+  }
+
+  #header-bar nav {
+    position: fixed;
+    background-color: black;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 50px 50px 50px 50px auto;
+    width: calc(100% - 62px);
+
+    -webkit-box-shadow: -62px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -62px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -62px 0px 0px 0px rgba(0, 0, 0, 0.5);
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  #header-bar nav.closed {
+    right: -414px;
+  }
+  #header-bar nav.opened {
+    right: 0px;
+  }
+
+  #hamburguer-close-button {
+    color: #fff;
+    font-size: 28px;
+    text-align: right;
+  }
+  #hamburguer-close-button i {
+    padding: 16px;
+    margin: 16px;
+  }
+
+  #nav-home {
+    grid-row: 2 / 3;
+  }
+  #nav-to-watch {
+    grid-row: 3 / 4;
+  }
+  #nav-confi {
+    grid-row: 4 / 5;
+  }
+  #header nav a {
+    border-left: solid 3px #000;
+    border-bottom: none;
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 36px;
+  }
+  #header nav a:hover {
+    border-bottom: none;
+  }
+  #header nav a.selected {
+    border-bottom: none;
+    border-left: solid 3px #fff;
+  }
+
+  .movieCard .title {
+    font-size: 24px;
+  }
+  .movieCard .vote {
+    font-size: 20px;
+  }
+  .movieCard .release {
+    font-size: 20px;
+  }
+
+  main .content #page-information {
+    font-size: 20px;
+  }
 }

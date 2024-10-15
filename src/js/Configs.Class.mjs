@@ -2,9 +2,11 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 export default class Configs {
 
-    constructor(language = "config_country") {
-        this.language = "en-US";
+    constructor() {
+        this.language = "en";
         this.country = "US";
+        this.languageName = "English";
+        this.countryName = "United States of America";
         this.init();
     }
     init(){
@@ -16,19 +18,32 @@ export default class Configs {
         if(country !== null){
             this.country = country;
         }
+
+        const languageName = getLocalStorage("languageName");
+        if(languageName !== null){
+            this.languageName = languageName;
+        }
+        const countryName = getLocalStorage("countryName");
+        if(countryName !== null){
+            this.countryName = countryName;
+        }
     }
-    setLanguage(language){
+    setLanguage(language, languageName){
         if(language !== null){
             setLocalStorage("language",language);
             this.language = language;
+            setLocalStorage("languageName",languageName);
+            this.languageName = languageName;
             return true;
         }
         return false;
     }
-    setCountry(country){
+    setCountry(country, countryName){
         if(country !== null){
             setLocalStorage("country",country);
             this.country = country;
+            setLocalStorage("countryName",countryName);
+            this.countryName = countryName;
             return true;
         }
         return false;

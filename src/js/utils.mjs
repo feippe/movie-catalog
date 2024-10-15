@@ -30,10 +30,15 @@ export function getParam(param) {
 }
 export async function loadHeaderAndFooter(headerId = "header", headerFileName = "header", footerId = "footer", footerFileName = "footer") {
     const templateHeader = await getTemplateFromFile(headerFileName);
-    qs(`#${headerId}`).innerHTML = templateHeader; 
+    qs(`#${headerId}`).innerHTML = templateHeader;
+    qs("#hamburguer-menu").addEventListener("click",(e) => {
+        qs("nav").className = "opened";
+    });
+    qs("#hamburguer-close-button i").addEventListener("click",(e) => {
+        qs("nav").className = "closed";
+    });
     const templateFooter = await getTemplateFromFile(footerFileName);
     qs(`#${footerId}`).innerHTML = templateFooter;
-
     switch (location.pathname) {
         case "/":
             qs("#nav-home").className = "selected";
@@ -45,8 +50,6 @@ export async function loadHeaderAndFooter(headerId = "header", headerFileName = 
             qs("#nav-to-watch").className = "selected";
             break;
     }
-
-    
 }
 export function renderListWithTemplate(list, templateFn, parentElement){
     let htmlFinal = list.map(templateFn).join('');
