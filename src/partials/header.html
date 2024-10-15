@@ -1,5 +1,5 @@
 <section id="header-bar">
-  <div id="header-bar-logo">
+  <a href="/" id="header-bar-logo">
     <img
       id="img-logo"
       src="/images/movie-catalog-logo.png"
@@ -9,8 +9,14 @@
       loading="lazy"
     />
     <span>Movie Catalog</span>
+  </a>
+  <div id="hamburguer-menu">
+    <i class="fa-solid fa-bars"></i>
   </div>
-  <nav>
+  <nav class="closed">
+    <span id="hamburguer-close-button">
+      <i class="fa-solid fa-xmark"></i>
+    </span>
     <a id="nav-home" href="/">Home</a>
     <a id="nav-to-watch" href="/to-watch/">To Watch</a>
     <a id="nav-confi" href="/confi/">Configs</a>

@@ -7,7 +7,10 @@ loadHeaderAndFooter();
 
 let configs = new Configs();
 
-let tmdb = new Tmdb(`${configs.language}-${configs.country}`);
+let tmdb = new Tmdb(configs.language, configs.country);
 const popular = await tmdb.getPopular();
+
+qs("#page-information").textContent =
+  `${configs.countryName} - ${configs.languageName}`;
 
 renderListWithTemplate(popular, cardTemplate, qs("#cardsMovies"));
