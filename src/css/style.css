@@ -58,6 +58,7 @@ header {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
+  text-decoration: none;
 }
 #header nav {
   display: grid;
@@ -81,6 +82,9 @@ header {
   border-bottom: solid 2px #ffffff;
 }
 #hamburguer-menu {
+  display: none;
+}
+#hamburguer-close-button {
   display: none;
 }
 
