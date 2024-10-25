@@ -45,4 +45,15 @@ export default class Tmdb {
     return langs.results;
   }
 
+  async search(val, page = 1){
+    return await ajax(
+      `${this.baseUrl}search/movie?query=${val}&include_adult=false&language=${this.language}-${this.country}&page=${page}`,
+      "GET",
+      this.headers
+    ).then((e) => {
+      console.log(e.results);
+      return e.results;
+    });
+  }
+
 }

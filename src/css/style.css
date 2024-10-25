@@ -1,10 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Quicksand:wght@300..700&display=swap");
 
+:root {
+  --color-p1: #730a26;
+  --color-p2: #1d2659;
+  --color-s1: #7193d9;
+  --color-s2: #20448c;
+  --color-s3: #bf0b1a;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray: #777;
+  --color-gray2: #bbb;
+  --color-gray3: #9ca4ab;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Quicksand", verdana, serif, arial;
-  background-color: #000;
+  background-color: var(--color-black);
 }
 h1,
 h2,
@@ -15,7 +28,7 @@ h5 {
   margin-bottom: 0;
 }
 main {
-  background-color: #1d2659;
+  background-color: var(--color-p2);
   padding: 0 32px;
 }
 main > .content {
@@ -27,7 +40,7 @@ main > .content {
 main > .content > h1 {
   display: inline-block;
   margin-top: 32px;
-  color: #fff;
+  color: var(--color-white);
 }
 /*HEADER*/
 header {
@@ -35,7 +48,7 @@ header {
   width: 100%;
   height: 62px;
   margin: 0;
-  background-color: #730a26;
+  background-color: var(--color-p1);
   -webkit-box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 23px -11px rgba(0, 0, 0, 0.75);
@@ -53,7 +66,7 @@ header {
   margin: 16px;
   height: 30px;
   line-height: 30px;
-  color: #fff;
+  color: var(--color-white);
   font-family: "Cinzel", verdana, serif, arial;
   display: flex;
   justify-content: space-between;
@@ -72,14 +85,14 @@ header {
   height: 30px;
   line-height: 30px;
   padding: 0 16px;
-  color: #fff;
-  border-bottom: solid 2px #730a26;
+  color: var(--color-white);
+  border-bottom: solid 2px var(--color-p1);
 }
 #header nav a:hover {
-  border-bottom: solid 2px #7193d9;
+  border-bottom: solid 2px var(--color-s1);
 }
 #header nav a.selected {
-  border-bottom: solid 2px #ffffff;
+  border-bottom: solid 2px var(--color-white);
 }
 #hamburguer-menu {
   display: none;
@@ -91,7 +104,7 @@ header {
 /*FOOTER*/
 #footer-information {
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
   padding: 32px 0;
 }
 #footer-information p {
@@ -103,12 +116,12 @@ header {
 /*CONFIGS PAGE*/
 .form-confi {
   padding: 16px;
-  color: #fff;
+  color: var(--color-white);
 }
 .form-confi fieldset {
   border-radius: 4px;
   margin-bottom: 8px;
-  border: solid 1px #777;
+  border: solid 1px var(--color-gray);
   display: inline-block;
   padding: 8px 16px;
 }
@@ -120,12 +133,12 @@ header {
   padding: 8px 0;
   border: none;
   background: none;
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   outline: none;
 }
 .form-confi fieldset label select option {
-  background: #1d2659;
+  background: var(--color-p2);
 }
 .form-confi h1 {
   margin-bottom: 32px;
@@ -137,7 +150,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   justify-content: space-between;
   gap: 16px;
-  color: #fff;
+  color: var(--color-white);
 }
 .movieCard {
   display: grid;
@@ -145,10 +158,10 @@ header {
   grid-template-rows: auto auto auto;
   padding-bottom: 16px;
   border-radius: 8px;
-  background-color: #730a26;
+  background-color: var(--color-p1);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
 }
 .movieCard:hover {
@@ -176,7 +189,7 @@ header {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   font-size: 12px;
-  color: #bbb;
+  color: var(--color-gray2);
   text-align: right;
   padding-right: 16px;
 }
@@ -184,7 +197,7 @@ header {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   font-size: 12px;
-  color: #bbb;
+  color: var(--color-gray2);
   padding-left: 16px;
 }
 .movieCard .release i {
@@ -194,12 +207,12 @@ header {
 /*HOME*/
 main .content #page-information {
   margin-top: -8px;
-  color: #bbb;
+  color: var(--color-gray2);
 }
 
 /*PDP*/
 #movieData {
-  color: #fff;
+  color: var(--color-white);
 }
 #image-background {
   width: 100%;
@@ -218,11 +231,11 @@ main .content #page-information {
   gap: 8px;
 }
 #production-companies .company {
-  background-color: #730a26;
+  background-color: var(--color-p1);
   display: inline-block;
   height: auto;
   font-size: 14px;
-  color: #fff;
+  color: var(--color-white);
   border-radius: 4px;
 }
 #production-companies .company img {
@@ -235,7 +248,7 @@ main .content #page-information {
   padding: 4px 16px;
 }
 #small-data #votes {
-  border-right: solid 1px #fff;
+  border-right: solid 1px var(--color-white);
   padding-right: 16px;
 }
 #tag-line {
@@ -251,7 +264,7 @@ main .content #page-information {
   grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
   justify-content: space-between;
   gap: 16px;
-  color: #fff;
+  color: var(--color-white);
 }
 #cast-list .cast {
   display: grid;
@@ -267,12 +280,12 @@ main .content #page-information {
   object-fit: cover;
   object-position: 0px 0px;
   height: 80px;
-  background-color: #000;
+  background-color: var(--color-black);
 }
 #cast-list .cast .castName {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  color: #fff;
+  color: var(--color-white);
   line-height: 30px;
   font-size: 16px;
 
@@ -284,6 +297,36 @@ main .content #page-information {
 #cast-list .cast .castCharacter {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  color: #9ca4ab;
+  color: var(--color-gray3);
   font-size: 14px;
+}
+
+/*SEARCH HEADER*/
+.header-search-bar {
+  background-color: var(--color-white);
+  height: 32px;
+  margin-top: 14px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 32px;
+}
+.header-search-bar #header-search-bar-button {
+  cursor: pointer;
+  text-align: center;
+  line-height: 32px;
+  color: var(--color-p1);
+}
+.header-search-bar #header-search-bar-input {
+  padding: 8px 0 8px 16px;
+  border: none;
+  background: none;
+  font-size: 14px;
+}
+.header-search-bar #header-search-bar-input:focus {
+  outline: none;
+}
+
+/*STREAMING PLATFORMS*/
+#title-streaming-platforms {
+  margin: 36px 0 16px 0;
 }
