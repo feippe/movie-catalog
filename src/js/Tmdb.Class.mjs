@@ -6,6 +6,9 @@ export default class Tmdb {
     this.apiKey = "3e038c553d49a6a8cdf8df49c057a4b6";
     this.accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZTAzOGM1NTNkNDlhNmE4Y2RmOGRmNDljMDU3YTRiNiIsIm5iZiI6MTcyODk0OTc0NS4yNTcxMzcsInN1YiI6IjY0YTliZGQ4NjZhMGQzMDBhZGU3YjZjNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8dDgb86wLBb67R37I5ec99GE8ceizBMkD0ZuUTu9mRc";
     this.baseUrl = "https://api.themoviedb.org/3/";
+    this.imageUrl = "https://image.tmdb.org/t/p/original/";
+    this.image500Url = "https://image.tmdb.org/t/p/w500";
+    this.image92Url = "https://image.tmdb.org/t/p/w92";
     this.headers = {
       accept: "application/json",
       Authorization: `Bearer ${this.accessToken}`
