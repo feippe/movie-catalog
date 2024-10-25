@@ -99,7 +99,7 @@ export default class Movie {
     let c = 0;
     result.cast.forEach(person => {
       c++;
-      if(c<=16){
+      if(c<=24){
         let personCard = ce("div");
         personCard.className = "cast";
         let personPic = ce("img");
@@ -123,6 +123,10 @@ export default class Movie {
     });
   }
 
+  async loadStreaming(){
+    
+  }
+
   async showPageData(){
     await getTemplateFromFile("pdp.movie.data.template").then((t) => {
       const parser = new DOMParser();
@@ -139,12 +143,8 @@ export default class Movie {
       this.printInPage();
       this.loadTitleInHead();
       this.loadCast();
+      this.leadStreaming();
     });
   }
-
-  orderCastByPopularity(cast){
-
-  }
-
 
 }

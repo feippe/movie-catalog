@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
+        search: resolve(__dirname, "src/search/index.html"),
         to_watch: resolve(__dirname, "src/to-watch/index.html"),
         movie_page: resolve(__dirname, "src/movie/index.html"),
         confi: resolve(__dirname, "src/confi/index.html"),

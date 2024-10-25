@@ -31,6 +31,14 @@ export function getParam(param) {
 export async function loadHeaderAndFooter(headerId = "header", headerFileName = "header", footerId = "footer", footerFileName = "footer") {
     const templateHeader = await getTemplateFromFile(headerFileName);
     qs(`#${headerId}`).innerHTML = templateHeader;
+    qs("#header-search-bar-button").addEventListener("click", (e) => {
+        searchMovie();
+    });
+    qs("#header-search-bar-input").addEventListener("keyup",(e) => {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            searchMovie();
+        }
+    });
     qs("#hamburguer-menu").addEventListener("click",(e) => {
         qs("nav").className = "opened";
     });
@@ -52,8 +60,20 @@ export async function loadHeaderAndFooter(headerId = "header", headerFileName = 
     }
 }
 export function renderListWithTemplate(list, templateFn, parentElement){
+    list.sort((a,b) => {
+        let dta = new Date(a.release_date).getTime();
+        let dtb = new Date(b.release_date).getTime();
+        return (dta - dtb) * -1;
+    });
     let htmlFinal = list.map(templateFn).join('');
     if(htmlFinal !== null){
         parentElement.innerHTML = htmlFinal;
+    }
+}
+
+function searchMovie(){
+    let val = qs("#header-search-bar-input").value;
+    if(val.length>2){
+        window.location.href = `/search/?q=${val}`;
     }
 }
