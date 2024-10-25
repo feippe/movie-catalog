@@ -148,6 +148,8 @@ header {
   background-color: #730a26;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 }
 .movieCard:hover {
   -webkit-box-shadow: 0px 10px 23px 0px rgba(0, 0, 0, 0.75);
@@ -193,4 +195,95 @@ header {
 main .content #page-information {
   margin-top: -8px;
   color: #bbb;
+}
+
+/*PDP*/
+#movieData {
+  color: #fff;
+}
+#image-background {
+  width: 100%;
+}
+#small-data {
+  display: flex;
+  gap: 16px;
+}
+#small-data span {
+  font-size: 14px;
+}
+
+#production-companies {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+#production-companies .company {
+  background-color: #730a26;
+  display: inline-block;
+  height: auto;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 4px;
+}
+#production-companies .company img {
+  width: calc(100% - 16px);
+  margin: 8px;
+  display: none;
+}
+#production-companies .company label {
+  display: inline-block;
+  padding: 4px 16px;
+}
+#small-data #votes {
+  border-right: solid 1px #fff;
+  padding-right: 16px;
+}
+#tag-line {
+  margin: 0 0 32px 0;
+}
+
+/*CAST IN PDP*/
+#title-top-cast {
+  margin: 36px 0 16px 0;
+}
+#cast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
+  justify-content: space-between;
+  gap: 16px;
+  color: #fff;
+}
+#cast-list .cast {
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-template-rows: 30px auto;
+  column-gap: 8px;
+}
+#cast-list .cast img {
+  width: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: 0px 0px;
+  height: 80px;
+  background-color: #000;
+}
+#cast-list .cast .castName {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  color: #fff;
+  line-height: 30px;
+  font-size: 16px;
+
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#cast-list .cast .castCharacter {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  color: #9ca4ab;
+  font-size: 14px;
 }

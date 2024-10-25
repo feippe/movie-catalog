@@ -19,7 +19,7 @@ export async function ajax(url, method, headers = {}) {
         .then(response => { return response.json(); })
         .catch(err => { console.error(err); return err; });
 }
-async function getTemplateFromFile(file) {
+export async function getTemplateFromFile(file) {
     const path = `/partials/${file}.html`;
     return await fetch(path).then((data) => data.text());
 }
