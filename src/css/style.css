@@ -217,6 +217,24 @@ main .content #page-information {
 #image-background {
   width: 100%;
 }
+#action-buttons {
+  margin-bottom: 36px;
+}
+#button-add-to-watch {
+  display: inline-block;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  background-color: var(--color-s1);
+  color: var(--color-black);
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#button-add-to-watch:hover {
+  background-color: var(--color-s2);
+  color: var(--color-white);
+}
 #small-data {
   display: flex;
   gap: 16px;
