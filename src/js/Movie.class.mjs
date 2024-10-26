@@ -2,10 +2,11 @@ import { ajax, qs, ce, getTemplateFromFile } from "./utils.mjs";
 
 export default class Movie {
 
-  constructor(id, tmdb) {
+  constructor(id, tmdb, countryName) {
     this.tmdb = tmdb;
     this.id = id;
     this.template = "";
+    this.countryName = countryName;
     this.getMovieData().then((e) => { 
       this.data = e;
       this.showPageData();
@@ -124,7 +125,54 @@ export default class Movie {
   }
 
   async loadStreaming(){
-    
+    qs("#title-streaming-platforms").textContent = `Streaming platform in ${this.countryName}`;
+    let result = await ajax(
+      `${this.tmdb.baseUrl}movie/${this.id}/watch/providers?language=${this.tmdb.language}-${this.tmdb.country}`,
+      "GET",
+      this.tmdb.headers
+    );
+    let providers = result.results[this.tmdb.country];
+    if(providers != null){
+      if(providers.flatrate != null){
+        this.makeListStreaming(qs("#streaming-list"),"Where to streaming it",providers.flatrate);
+      }
+      if(providers.rent != null){
+        this.makeListStreaming(qs("#streaming-list"),"Where to rent it",providers.rent);
+      }
+      if(providers.buy != null){
+        this.makeListStreaming(qs("#streaming-list"),"Where to buy it",providers.buy);
+      }
+    }else{
+      qs("#streaming-list").textContent = `No streaming platforms avaible in ${this.countryName}`;
+    }
+  }
+
+  makeListStreaming(parent, title, list){
+    let titleElement = ce("h3");
+    titleElement.textContent = title;
+    parent.append(titleElement);
+
+    let listElement = ce("div");
+    listElement.className = "list-streaming";
+    list.forEach(s => {
+      console.log(s);
+      let platformElement = ce("div");
+      platformElement.className = "streaming-platform";
+      
+        let platformLogoElement = ce("img");
+        platformLogoElement.setAttribute("src",`${this.tmdb.image92Url}${s.logo_path}`);
+        platformLogoElement.setAttribute("alt",`${s.provider_name}`);
+        platformElement.append(platformLogoElement);
+
+        let platformNameElement = ce("div");
+        platformNameElement.className = "streaming-platorm-name";
+        platformNameElement.textContent = `${s.provider_name}`;
+        platformElement.append(platformNameElement);
+
+      listElement.append(platformElement);
+    });
+
+    parent.append(listElement);
   }
 
   async showPageData(){
@@ -143,7 +191,7 @@ export default class Movie {
       this.printInPage();
       this.loadTitleInHead();
       this.loadCast();
-      this.leadStreaming();
+      this.loadStreaming();
     });
   }
 

@@ -288,7 +288,6 @@ main .content #page-information {
   color: var(--color-white);
   line-height: 30px;
   font-size: 16px;
-
   display: block;
   white-space: nowrap;
   overflow: hidden;
@@ -329,4 +328,36 @@ main .content #page-information {
 /*STREAMING PLATFORMS*/
 #title-streaming-platforms {
   margin: 36px 0 16px 0;
+}
+
+.list-streaming {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(162px, auto));
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-white);
+}
+
+.streaming-platform {
+  display: grid;
+  grid-template-columns: 30px auto;
+  height: 30px;
+  gap: 8px;
+  background-color: var(--color-s2);
+  border-radius: 4px;
+}
+.streaming-platform img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.streaming-platform .streaming-platorm-name {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  margin-right: 16px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
