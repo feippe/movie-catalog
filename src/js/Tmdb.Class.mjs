@@ -47,7 +47,7 @@ export default class Tmdb {
 
   async search(val, page = 1){
     return await ajax(
-      `${this.baseUrl}search/movie?query=${val}&include_adult=true&language=${this.language}-${this.country}&page=${page}`,
+      `${this.baseUrl}search/movie?query=${val}&include_adult=false&language=${this.language}-${this.country}&page=${page}`,
       "GET",
       this.headers
     ).then((e) => {
