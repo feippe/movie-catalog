@@ -60,14 +60,18 @@ export async function loadHeaderAndFooter(headerId = "header", headerFileName = 
     }
 }
 export function renderListWithTemplate(list, templateFn, parentElement){
-    list.sort((a,b) => {
-        let dta = new Date(a.release_date).getTime();
-        let dtb = new Date(b.release_date).getTime();
-        return (dta - dtb) * -1;
-    });
-    let htmlFinal = list.map(templateFn).join('');
-    if(htmlFinal !== null){
-        parentElement.innerHTML = htmlFinal;
+    if(list.length>0){
+        list.sort((a,b) => {
+            let dta = new Date(a.release_date).getTime();
+            let dtb = new Date(b.release_date).getTime();
+            return (dta - dtb) * -1;
+        });
+        let htmlFinal = list.map(templateFn).join('');
+        if(htmlFinal !== null){
+            parentElement.innerHTML = htmlFinal;
+        }
+    }else{
+        parentElement.innerHTML = `No movies to show!`;
     }
 }
 
