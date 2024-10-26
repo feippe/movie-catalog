@@ -9,4 +9,4 @@ const configs = new Configs();
 const tmdb = new Tmdb(configs.language, configs.country);
 
 const idMovie = getParam("id");
-new Movie(idMovie, tmdb, configs.countryName);
+new Movie(idMovie, tmdb, configs);

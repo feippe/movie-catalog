@@ -7,6 +7,7 @@ export default class Configs {
         this.country = "US";
         this.languageName = "English";
         this.countryName = "United States of America";
+        this.toWatchList = [];
         this.init();
     }
     init(){
@@ -27,6 +28,7 @@ export default class Configs {
         if(countryName !== null){
             this.countryName = countryName;
         }
+        this.getToWatchList();
     }
     setLanguage(language, languageName){
         if(language !== null){
@@ -47,5 +49,14 @@ export default class Configs {
             return true;
         }
         return false;
+    }
+    getToWatchList(){
+        this.toWatchList = getLocalStorage("toWatch");
+        if(this.toWatchList == null){
+            this.toWatchList = [];
+        }
+    }
+    setToWatchList(){
+        this.toWatchList = setLocalStorage("toWatch",this.toWatchList);
     }
 }
