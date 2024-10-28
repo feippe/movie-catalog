@@ -14,7 +14,8 @@ let configs = new Configs();
 
 let tmdb = new Tmdb(configs.language, configs.country);
 let q = getParam("q");
-const result = await tmdb.search(q);
+let p = getParam("p") != null ? getParam("p") : 1;
+const result = await tmdb.search(q, p);
 
 qs("h1").innerHTML = `Search by <i>${q}</i>`;
 
