@@ -51,7 +51,6 @@ export default class Tmdb {
       "GET",
       this.headers
     ).then((e) => {
-      console.log(e.results);
       return e.results;
     });
   }
